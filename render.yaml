@@ -5,7 +5,8 @@ services:
     buildCommand: "npm install"
     startCommand: "node server.js"
 
-  - type: static_site
+  - type: web
     name: project
+    env: static
     buildCommand: "cd frontend && npm install && npm run build"
-    publishDir: "frontend/dist"
+    staticPublishPath: "frontend/dist"

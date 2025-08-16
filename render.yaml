@@ -2,12 +2,10 @@ services:
   - type: web
     name: backend
     env: node
-    plan: free       # 👈 Force free tier
     buildCommand: "npm install"
     startCommand: "node server.js"
 
-  - type: static
+  - type: static_site
     name: project
-    plan: free       # 👈 Force free tier
-    buildCommand: "cd frontend && npm install && npm run build"
-    publishDir: "frontend/dist"
+    buildCommand: "cd project && npm install && npm run build"
+    publishDir: frontend/dist
